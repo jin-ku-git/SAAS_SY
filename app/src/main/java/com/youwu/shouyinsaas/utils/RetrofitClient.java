@@ -48,7 +48,7 @@ public class RetrofitClient {
 
 
 //    public static String baseUrl = "https://saas-test-api.youwuu.com/app/";//saas测试 20022-12-16
-    public static String baseUrl = "https://saasapi.youwuu.com/app/";//saas正式 20023-03-10
+    public static String baseUrl = "https://saasapi.youwuu.com/app/";//saas正式 20023-03-10111
 
     private static Context mContext = Utils.getContext();
 
