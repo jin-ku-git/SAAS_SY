@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:roundiv="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/radius_white"
+    android:id="@+id/layout_view"
+    android:paddingTop="@dimen/size_25dp"
+    android:paddingLeft="@dimen/size_35dp"
+    android:paddingRight="@dimen/size_35dp"
+    android:paddingBottom="@dimen/size_30dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/close_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="返回"
+            android:textSize="@dimen/text_18sp"
+            android:textColor="#40000000"
+            android:drawableLeft="@mipmap/lift_sanjiao"
+            android:drawablePadding="@dimen/size_5dp"
+            android:layout_centerVertical="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提示"
+            android:textSize="@dimen/text_18sp"
+            android:textColor="@color/main_black"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_260dp"
+        android:orientation="horizontal"
+        android:background="@drawable/radius_hui_xian_f8fcff_8dp"
+        android:layout_marginTop="@dimen/size_15dp"
+        android:padding="@dimen/size_15dp"
+        >
+        <TextView
+            android:id="@+id/content_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_30dp"
+            android:text="确认提交盘点吗？"
+            android:textColor="@color/main_black"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_45dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/size_20dp"
+        >
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="取消"
+            android:textSize="@dimen/size_14dp"
+            android:textColor="@color/main_black_32"
+            android:gravity="center"
+            android:background="@drawable/radius_hui_xian_5dp"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/size_10dp"
+            />
+        <TextView
+            android:id="@+id/confirm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="确定"
+            android:textSize="@dimen/size_14dp"
+            android:textColor="@color/main_white"
+            android:gravity="center"
+            android:background="@drawable/radius_blue_5dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/size_10dp"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/PrintVoucher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/size_20dp"
+        android:visibility="gone"
+        >
+        <com.xuexiang.xui.widget.button.SmoothCheckBox
+            android:id="@+id/journal_check"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:scb_color_checked="@color/main_color"
+            app:scb_stroke_width="@dimen/size_1dp"
+            android:layout_gravity="center"
+            android:clickable="true"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="打印单据"
+            android:textColor="#393939"
+            android:layout_gravity="center"
+            android:textSize="@dimen/text_17sp"
+            android:layout_marginLeft="@dimen/size_5dp"
+            />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

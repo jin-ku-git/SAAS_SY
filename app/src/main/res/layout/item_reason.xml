@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/main_black"
+        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/color_hui_f8fcff"
+            >
+            <View
+                android:layout_width="1dp"
+                android:layout_height="@dimen/size_45dp"
+                android:background="@color/main_black"
+                />
+            <TextView
+                android:id="@+id/NameText"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_45dp"
+                android:textColor="@color/black"
+                android:text="类型"
+                android:gravity="center"
+                android:layout_weight="1"
+
+                />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="@dimen/size_45dp"
+                android:background="@color/main_black"
+                />
+            <EditText
+                android:id="@+id/number_text"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_45dp"
+                android:hint="请输入数量"
+                android:paddingLeft="@dimen/size_10dp"
+                android:textColor="@color/main_black"
+                android:textColorHint="@color/md_grey_900"
+                android:textSize="@dimen/text_16sp"
+                android:inputType="number"
+                android:digits="1234567890"
+                android:theme="@style/WhiteEditText"
+                android:layout_weight="1"
+                android:selectAllOnFocus="true"
+                android:background="@color/color_hui_f8fcff"
+
+                />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="@dimen/size_45dp"
+                android:background="@color/main_black"
+                />
+        </LinearLayout>
+    <View
+        android:id="@+id/bottom_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/main_black"
+        android:visibility="gone"
+        />
+</LinearLayout>

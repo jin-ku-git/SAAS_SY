@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:roundiv="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.youwu.shouyinsaas.ui.order_goods.goods.EditSaleGoodsViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_55dp"
+            android:orientation="horizontal"
+            android:background="@color/main_color"
+            >
+            <TextView
+                android:id="@+id/fanhui"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="返回"
+                android:gravity="center"
+                android:textSize="@dimen/text_18sp"
+                android:textColor="@color/main_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_30dp"
+                android:drawableLeft="@mipmap/lift_white_sanjiao"
+                android:drawablePadding="@dimen/size_5dp"
+                binding:onClickCommand="@{viewModel.returnOnClick}"
+                />
+            
+            <View
+                android:layout_width="2dp"
+                android:layout_height="@dimen/size_35dp"
+                android:background="@drawable/radius_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_35dp"
+                android:layout_toRightOf="@+id/fanhui"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="销售商品列表"
+                android:textColor="@color/main_white"
+                android:textSize="@dimen/text_19sp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F4F8FB"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+                <!-- 左侧 -->
+                <LinearLayout
+                    android:layout_width="@dimen/size_125dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerview_community"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never" />
+                </LinearLayout>
+                <!-- 中间 -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview_commodity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    android:overScrollMode="never"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

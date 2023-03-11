@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:roundiv="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="com.youwu.shouyinsaas.ui.set_up.StoreSetUpViewModel"/>
+
+        <variable
+            name="viewModel"
+            type="StoreSetUpViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_55dp"
+            android:orientation="horizontal"
+            android:background="@color/main_color"
+            >
+            <TextView
+                android:id="@+id/fanhui"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="返回"
+                android:gravity="center"
+                android:textSize="@dimen/text_18sp"
+                android:textColor="@color/main_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_30dp"
+                android:drawableLeft="@mipmap/lift_white_sanjiao"
+                android:drawablePadding="@dimen/size_5dp"
+                binding:onClickCommand="@{viewModel.returnOnClick}"
+                />
+            
+            <View
+                android:layout_width="2dp"
+                android:layout_height="@dimen/size_35dp"
+                android:background="@drawable/radius_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_35dp"
+                android:layout_toRightOf="@+id/fanhui"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="门店设置"
+                android:textColor="@color/main_white"
+                android:textSize="@dimen/text_19sp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F4F8FB"
+            android:orientation="vertical"
+            >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/size_68dp"
+            android:layout_marginEnd="@dimen/size_68dp"
+            android:layout_marginTop="@dimen/size_65dp"
+            android:paddingTop="@dimen/size_20dp"
+            android:paddingBottom="@dimen/size_20dp"
+            android:paddingRight="@dimen/size_60dp"
+            android:paddingLeft="@dimen/size_60dp"
+            android:background="@drawable/radius_white_8dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="自动接单："
+                    android:textSize="@dimen/size_18dp"
+                    android:textColor="@color/main_black_85"
+                    android:layout_gravity="center"
+                    />
+                <RadioGroup
+                    android:id="@+id/hide_radius_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/hide_radius_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:checked="@{viewModel.singleLiveField.is_order==1?true:false}"
+                        android:text="是"
+                        android:textSize="12sp" />
+
+                    <RadioButton
+                        android:id="@+id/hide_radius_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:background="@null"
+                        android:text="否"
+                        android:checked="@{viewModel.singleLiveField.is_order==1?false:true}"
+                        android:layout_weight="1"
+                        android:textSize="12sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/size_15dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="营业时间："
+                    android:textColor="@color/main_black_85"
+                    android:layout_gravity="center"
+                    android:textSize="@dimen/size_18dp"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_50dp"
+                    android:background="@drawable/radius_hui_xian_5dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:paddingRight="@dimen/size_25dp"
+                        android:paddingLeft="@dimen/size_25dp"
+                        android:layout_marginRight="@dimen/size_5dp"
+                        binding:onClickCommand="@{viewModel.StateOnClick}"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@={viewModel.start_time}"
+                            android:hint="开始时间"
+                            android:textSize="@dimen/text_17sp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/main_black"
+                            />
+
+
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="至"
+                        android:textSize="@dimen/size_18dp"
+                        android:textColor="@color/main_black"
+                        android:layout_gravity="center"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:paddingRight="@dimen/size_25dp"
+                        android:paddingLeft="@dimen/size_25dp"
+                        android:layout_marginLeft="@dimen/size_5dp"
+                        binding:onClickCommand="@{viewModel.EndOnClick}"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@={viewModel.end_time}"
+                            android:hint="结束时间"
+                            android:textSize="@dimen/text_17sp"
+                            android:layout_gravity="center"
+                            android:textColor="@color/main_black"
+                            />
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            
+        </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/size_123dp"
+                android:layout_marginEnd="@dimen/size_123dp"
+                android:layout_marginTop="@dimen/size_15dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="重置"
+                    android:textSize="@dimen/text_17sp"
+                    android:textColor="@color/main_white"
+                    android:background="@drawable/radius_lv_8dp"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    binding:onClickCommand="@{viewModel.ResetOnClick}"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="确认"
+                    android:textSize="@dimen/text_17sp"
+                    android:textColor="@color/main_white"
+                    android:background="@drawable/radius_blue_8dp"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/size_5dp"
+                    android:layout_marginEnd="@dimen/size_5dp"
+                    binding:onClickCommand="@{viewModel.ConfirmOnClick}"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

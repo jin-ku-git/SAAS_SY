@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:background="@drawable/shape_border">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <com.youwu.shouyinsaas.utils_view.RoundImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:id="@+id/goods_image"
+                android:src="@mipmap/load_fail" />
+            <com.youwu.shouyinsaas.utils_view.RoundImageView
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp_10"
+                android:id="@+id/sell_null"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@mipmap/sell_null" />
+
+        </RelativeLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:text=""
+                android:gravity="center"
+                android:id="@+id/goods_name"
+                android:textColor="@color/main_black_85"
+                android:textSize="@dimen/sp_14" />
+
+    </LinearLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:id="@+id/goods_number"
+            android:text=""
+            android:textColor="@color/main_black_85"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:id="@+id/goods_price"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/main_black_85"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:id="@+id/discount_price"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/main_black_85"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:id="@+id/goods_all_price"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/main_hue"
+            android:textSize="@dimen/sp_14" />
+
+</LinearLayout>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.youwu.shouyinsaas.ui.money.CouponPushViewModel" />
+        <import type="android.view.View"/>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_55dp"
+            android:orientation="horizontal"
+            android:background="@color/main_color"
+            >
+            <TextView
+                android:id="@+id/fanhui"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="返回"
+                android:gravity="center"
+                android:textSize="@dimen/text_18sp"
+                android:textColor="@color/main_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_30dp"
+                android:drawableLeft="@mipmap/lift_white_sanjiao"
+                android:drawablePadding="@dimen/size_5dp"
+                binding:onClickCommand="@{viewModel.returnOnClick}"
+                />
+            
+            <View
+                android:layout_width="2dp"
+                android:layout_height="@dimen/size_34dp"
+                android:background="@drawable/radius_white"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_34dp"
+                android:layout_toRightOf="@+id/fanhui"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="优惠券推送"
+                android:textColor="@color/main_white"
+                android:textSize="@dimen/text_19sp"
+                android:layout_gravity="center"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/main_white"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_100dp"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/size_128dp"
+                android:layout_marginEnd="@dimen/size_128dp"
+                android:layout_marginTop="@dimen/size_15dp"
+                android:background="@drawable/radius_hui_8dp"
+                >
+                <com.youwu.shouyinsaas.utils_view.CircleImageView
+                    android:id="@+id/vip_img"
+                    android:layout_width="@dimen/size_84dp"
+                    android:layout_height="@dimen/size_84dp"
+                    tools:src="@mipmap/user_image"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/size_11dp"
+                    android:src="@mipmap/user_image"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@+id/vip_img"
+                    android:layout_marginLeft="@dimen/size_12dp"
+                    android:layout_centerVertical="true"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="会员名称："
+                            android:textSize="@dimen/text_15sp"
+                            android:textColor="@color/main_black"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@={viewModel.vip_name}"
+                            android:textSize="@dimen/text_15sp"
+                            android:textColor="@color/main_black"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/size_8dp"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="手机号："
+                            android:textSize="@dimen/text_15sp"
+                            android:textColor="@color/main_black"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewModel.vip_tel}"
+                            android:textSize="@dimen/text_15sp"
+                            android:textColor="@color/main_black"
+
+                            />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/size_5dp"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="余额："
+                            android:textSize="@dimen/text_15sp"
+                            android:textColor="@color/main_black"
+                            />
+                        <TextView
+                            android:id="@+id/tv_price_key"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="¥"
+                            android:textColor="#F80000"
+                            android:textSize="@dimen/text_13sp"  />
+
+                        <TextView
+                            android:id="@+id/tv_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="2dp"
+                            android:layout_toRightOf="@id/tv_price_key"
+                            android:text="@={viewModel.vip_money}"
+                            android:textColor="#F80000"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/text_size_23sp"  />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/coupon_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/size_128dp"
+                android:layout_marginEnd="@dimen/size_128dp"
+                android:layout_marginTop="@dimen/size_15dp"
+                android:layout_weight="1"
+                android:scrollbars="vertical"
+                android:overScrollMode="never"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="确认推送"
+                android:textSize="@dimen/size_18dp"
+                android:textColor="@color/main_white"
+                android:background="@drawable/radius_blue_8dp"
+                android:paddingBottom="@dimen/size_15dp"
+                android:paddingTop="@dimen/size_15dp"
+                android:paddingLeft="@dimen/size_150dp"
+                android:paddingRight="@dimen/size_150dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/size_35dp"
+                android:layout_marginTop="@dimen/size_20dp"
+                binding:onClickCommand="@{viewModel.PushOnClick}"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>
