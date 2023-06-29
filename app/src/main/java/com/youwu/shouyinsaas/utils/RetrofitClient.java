@@ -41,14 +41,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RetrofitClient {
     //超时时间
-    private static final int DEFAULT_TIMEOUT = 20;
+    private static final int DEFAULT_TIMEOUT = 60;
     //缓存时间
-    private static final int CACHE_TIMEOUT = 10 * 1024 * 1024;
+    private static final int CACHE_TIMEOUT = 20 * 1024 * 1024;
     //服务端根路径
 
 
-//    public static String baseUrl = "https://saas-test-api.youwuu.com/app/";//saas测试 20022-12-16
-    public static String baseUrl = "https://saasapi.youwuu.com/app/";//saas正式 20023-03-10111
+    public static String baseUrl = "https://saas-test-api.youwuu.com/app/";//saas测试 20022-12-16
+//    public static String baseUrl = "https://saasapi.youwuu.com/app/";//saas正式 20023-03-10
 
     private static Context mContext = Utils.getContext();
 
@@ -128,6 +128,7 @@ public class RetrofitClient {
                 )
 
                 .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
+                .readTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .writeTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                 .connectionPool(new ConnectionPool(8, 15, TimeUnit.SECONDS))
                 // 这里你可以根据自己的机型设置同时连接的个数和时间，我这里8个，和每个保持时间为10s

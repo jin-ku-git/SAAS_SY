@@ -85,6 +85,32 @@ public class TimeUtil {
     }
 
     /**
+     * 字符串转时间戳
+     * @param time
+     * @param format
+     * @return
+     */
+    public static long getTimeStemp(String time, String format) {
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        if (!"".equals(format)) {
+            simpleDateFormat = new SimpleDateFormat(format);
+        }
+
+        long timeStemp = 0;
+        try {
+
+            Date date = simpleDateFormat.parse(time);
+
+            timeStemp = date.getTime();
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return timeStemp;
+    }
+
+    /**
      * 获取当天开始时间
      * @return
      */
@@ -874,8 +900,8 @@ public class TimeUtil {
 
     /**
      * 两个时间之间的天数
-     * @param date1
-     * @param date2
+     * @param date1     结束时间
+     * @param date2     开始时间
      * @return
      */
     public static long getDays(String date1, String date2) {

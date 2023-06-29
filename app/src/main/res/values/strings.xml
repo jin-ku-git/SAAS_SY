@@ -45,4 +45,18 @@
 
     <string name="more_bracelet_conncet">已连接</string>
     <string name="more_bracelet_unconncet">未连接</string>
+    <string name="to">至</string>
+    <string name="common">共</string>
+    <string name="sky">天</string>
+    <string name="sun">日</string>
+    <string name="mon">一</string>
+    <string name="tue">二</string>
+    <string name="wed">三</string>
+    <string name="thu">四</string>
+    <string name="fri">五</string>
+    <string name="sat">六</string>
+    <string name="starTime">开始时间</string>
+    <string name="endTime">结束时间</string>
+
+
 </resources>

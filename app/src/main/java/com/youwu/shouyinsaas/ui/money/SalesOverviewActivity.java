@@ -28,7 +28,7 @@ import java.util.Random;
 import me.goldze.mvvmhabit.base.BaseActivity;
 
 /**
- * 销售概况
+ * 销售概况页面
  * 2022/06/01
  */
 public class SalesOverviewActivity extends BaseActivity<ActivitySalesOverviewBinding, SalesOverviewViewModel> {
@@ -83,6 +83,8 @@ public class SalesOverviewActivity extends BaseActivity<ActivitySalesOverviewBin
         viewModel.state.set(1);
 
         viewModel.sales_situation(viewModel.state.get()+"");
+
+
 
 
     }

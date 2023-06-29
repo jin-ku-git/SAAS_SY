@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginLeft="@dimen/size_15dp"
-                android:background="@drawable/hui_xian"
+                android:background="@drawable/hui_xian_white"
                 >
                 <LinearLayout
                     android:layout_width="match_parent"

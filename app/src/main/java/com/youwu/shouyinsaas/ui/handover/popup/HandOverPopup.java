@@ -248,10 +248,10 @@ public class HandOverPopup extends CenterPopupView {
                 otherMoneyLists.add(otherMoneyList);
 
 
-                String total_amount_list = new Gson().toJson(handoverBeans.getTotal_amount_list());
-                String number_list = new Gson().toJson(handoverBeans.getNumber_list());
-                String amount_list = new Gson().toJson(handoverBeans.getAmount_list());
-                String other_money_list = new Gson().toJson(handoverBeans.getOther_money_list());
+                String total_amount_list = new Gson().toJson(handoverBeans.getTotal_amount());
+                String number_list = new Gson().toJson(handoverBeans.getTotal_orders());
+                String amount_list = new Gson().toJson(handoverBeans.getPay_amount());
+                String other_money_list = new Gson().toJson(handoverBeans.getReduced_amount());
 
                 String cash_amount = "[{\"money\":\"100\",\"number\":\"" + value_100_num.getText().toString() + "\"},{\"money\":\"50\",\"number\":\"" + value_50_num.getText().toString() + "\"},{\"money\":\"20\",\"number\":\"" + value_20_num.getText().toString() + "\"}" +
                         ",{\"money\":\"10\",\"number\":\"" + value_10_num.getText().toString() + "\"},{\"money\":\"5\",\"number\":\"" + value_5_num.getText().toString() + "\"},{\"money\":\"1\",\"number\":\"" + value_1_num.getText().toString() + "\"}" +

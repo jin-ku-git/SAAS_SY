@@ -97,13 +97,13 @@ public class HandoverViewModel extends BaseViewModel<DemoRepository> {
         super.onDestroy();
     }
 
+
     /**
      * 获取交接班详情
-     * @param start
-     * @param end
+     * @param store_id      门店id
      */
-    public void shift_change(String start, String end) {
-        model.SHIFT_CHANGE(start,end)
+    public void new_day_sales(String store_id) {
+        model.NEW_DAY_SALES(store_id)
                 .compose(RxUtils.schedulersTransformer()) //线程调度
                 .compose(RxUtils.exceptionTransformer())
                 .doOnSubscribe(new Consumer<Disposable>() {
@@ -117,6 +117,8 @@ public class HandoverViewModel extends BaseViewModel<DemoRepository> {
                     public void onNext(BaseBean<Object> response) {
                         if (response.isOk()){
                             String JsonData = new Gson().toJson(response.data);
+
+                            KLog.d("日志信息："+JsonData);
 
                             HandoverBean handoverBean = JSON.parseObject(toPrettyFormat(JsonData), HandoverBean.class);
                             handoverBeanSingleLiveEvent.setValue(handoverBean);
@@ -151,7 +153,6 @@ public class HandoverViewModel extends BaseViewModel<DemoRepository> {
      * @param cash_total_amount
      */
     public void add_shift_change(String total_amount_list, String number_list, String amount_list, String other_money_list, String cash_amount, String cash_total_amount) {
-
         model.ADD_SHIFT_CHANGE(total_amount_list,number_list,amount_list,other_money_list,cash_amount,cash_total_amount)
                 .compose(RxUtils.schedulersTransformer()) //线程调度
                 .compose(RxUtils.exceptionTransformer())
@@ -190,6 +191,58 @@ public class HandoverViewModel extends BaseViewModel<DemoRepository> {
     }
 
     /**
+     *  提交日结
+     * @param total_amount
+     * @param total_orders
+     * @param pay_amount
+     * @param reduced_amount
+     * @param cash_list
+     */
+    public void new_update_day_sales(String total_amount, String total_orders, String pay_amount, String reduced_amount, String cash_list) {
+
+        KLog.d("提交日结提交信息：\n"+"total_amount:"+total_amount+"\ntotal_orders:"+total_orders+"\npay_amount:"+pay_amount+"\nreduced_amount:"+reduced_amount+"\ncash_list:"+cash_list);
+
+        model.NEW_UPDATE_DAY_SALES(total_amount,total_orders,pay_amount,reduced_amount,cash_list)
+                .compose(RxUtils.schedulersTransformer()) //线程调度
+                .compose(RxUtils.exceptionTransformer())
+                .doOnSubscribe(new Consumer<Disposable>() {
+                    @Override
+                    public void accept(Disposable disposable) throws Exception {
+                        showDialog();
+                    }
+                })
+                .subscribe(new DisposableObserver<BaseBean<Object>>() {
+                    @Override
+                    public void onNext(BaseBean<Object> response) {
+                        if (response.isOk()){
+                            String JsonData = new Gson().toJson(response.data);
+                            KLog.d("提交日结返回数据"+JsonData);
+                            IntegerEvent.setValue(5);
+//                            model.SignOutAccount();
+//                            startActivity(LoginActivity.class);
+                        }else {
+                            RxToast.normal(response.getMessage());
+                        }
+                    }
+                    @Override
+                    public void onError(Throwable throwable) {
+                        //关闭对话框
+                        dismissDialog();
+                        if (throwable instanceof ResponseThrowable) {
+                            ToastUtils.showShort(((ResponseThrowable) throwable).message);
+                        }
+                    }
+                    @Override
+                    public void onComplete() {
+                        //关闭对话框
+                        dismissDialog();
+                    }
+                });
+    }
+
+
+
+    /**
      * 获取日结信息
      */
     public void day_sales() {
@@ -206,11 +259,18 @@ public class HandoverViewModel extends BaseViewModel<DemoRepository> {
                     @Override
                     public void onNext(BaseBean<Object> response) {
                         if (response.isOk()){
-                            String JsonData = new Gson().toJson(response.data);
+                            if (response.data==null){
 
-                            DaySalesBean daySalesBean=JSON.parseObject(JsonData,DaySalesBean.class);
+                            }else {
+                                String JsonData = new Gson().toJson(response.data);
 
-                            daySalesBeanSingleLiveEvent.setValue(daySalesBean);
+                                KLog.d("日志信息："+JsonData);
+                            }
+
+
+//                            DaySalesBean daySalesBean=JSON.parseObject(JsonData,DaySalesBean.class);
+//
+//                            daySalesBeanSingleLiveEvent.setValue(daySalesBean);
                         }else {
                             RxToast.normal(response.getMessage());
                         }

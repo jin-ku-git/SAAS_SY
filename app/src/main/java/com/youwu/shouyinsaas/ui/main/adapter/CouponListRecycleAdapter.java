@@ -12,7 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.youwu.shouyinsaas.R;
 import com.youwu.shouyinsaas.ui.main.bean.CouponBean;
+import com.youwu.shouyinsaas.utils_view.RxToast;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 
@@ -60,6 +63,8 @@ public class CouponListRecycleAdapter extends RecyclerView.Adapter<CouponListRec
         holder.cou_time.setText("使用时间："+data.getStart_time()+"~"+data.getEnd_time());
         holder.img_choice.setVisibility(data.isSelect()?View.VISIBLE:View.GONE);
 
+
+
         if (data.getCoupon_type()==1){
             holder.FullMinus.setVisibility(View.VISIBLE);
             holder.discountLayout.setVisibility(View.GONE);
@@ -74,6 +79,23 @@ public class CouponListRecycleAdapter extends RecyclerView.Adapter<CouponListRec
             @Override
             public void onClick(View view) {
 //                setCurrentIndex(position);
+
+                SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                Long end = 0L;
+                Long start = 0L;
+                try {
+                    end = sf.parse(data.getEnd_time()).getTime();// 日期转换为时间戳
+                    start = sf.parse(data.getStart_time()).getTime();// 日期转换为时间戳
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                if (System.currentTimeMillis() > end) {
+                    RxToast.normal("优惠券已经过期！");
+                    return;
+                } else if (System.currentTimeMillis() < start) {
+                    RxToast.normal("优惠券活动还未开始！");
+                    return;
+                }
 
                 CouponBean item = goodsEntityList.get(position);
                 if (item.isSelect()) {

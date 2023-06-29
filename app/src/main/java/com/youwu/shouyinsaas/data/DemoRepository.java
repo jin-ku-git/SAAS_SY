@@ -514,12 +514,50 @@ public class DemoRepository extends BaseModel implements HttpDataSource, LocalDa
 
     /**
      * 反结帐（审核退款订单）2023/03/08加
-     * @param audit_status  审核退款 1同意 2拒绝
+     * @param store_id      门店id
      * @param order_sn      订单编号
-     * @param remark        审核备注
      * @return
      */
     public Observable<BaseBean<Object>> NEW_REFUNF_ORDER(String store_id,String order_sn) {
         return mHttpDataSource.NEW_REFUNF_ORDER(store_id,order_sn);
+    }
+
+    /**
+     * 日志列表
+     *
+     * @param store_id
+     * @return
+     */
+    public Observable<BaseBean<Object>> NEW_DAY_SALES(String store_id) {
+        return mHttpDataSource.NEW_DAY_SALES(store_id);
+    }
+
+
+    /**
+     * 销售概况
+     *
+     * @param start                     开始日期
+     * @param end                       结束日期
+     * @param breakfast_start           早餐开始时间
+     * @param breakfast_end             早餐结束时间
+     * @param lunch_start               午餐开始时间
+     * @param lunch_end                 午餐结束时间
+     * @param dinner_start              晚餐开始时间
+     * @param dinner_end                晚餐结束时间
+     */
+    public Observable<BaseBean<Object>> NEW_SALES_INFO(String start,String end,String breakfast_start,String breakfast_end,String lunch_start,String lunch_end,String dinner_start,String dinner_end) {
+        return mHttpDataSource.NEW_SALES_INFO(start,end,breakfast_start,breakfast_end,lunch_start,lunch_end,dinner_start,dinner_end);
+    }
+
+    /**
+     *  提交日结 2023/03/15 加
+     * @param total_amount
+     * @param total_orders
+     * @param pay_amount
+     * @param reduced_amount
+     * @param cash_list
+     */
+    public Observable<BaseBean<Object>> NEW_UPDATE_DAY_SALES(String total_amount, String total_orders, String pay_amount, String reduced_amount, String cash_list) {
+        return mHttpDataSource.NEW_UPDATE_DAY_SALES(total_amount,total_orders,pay_amount,reduced_amount,cash_list);
     }
 }

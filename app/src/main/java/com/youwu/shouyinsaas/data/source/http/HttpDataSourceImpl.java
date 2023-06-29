@@ -461,4 +461,30 @@ public class HttpDataSourceImpl implements HttpDataSource {
     public Observable<BaseBean<Object>> NEW_REFUNF_ORDER(String store_id,String order_sn) {
         return apiService.NEW_REFUNF_ORDER(store_id,order_sn);
     }
+    /**
+     * 日志列表 2023/03/15加
+     * @return
+     */
+    @Override
+    public Observable<BaseBean<Object>> NEW_DAY_SALES(String store_id) {
+        return apiService.NEW_DAY_SALES(store_id);
+    }
+
+    /**
+     * 销售概况 2023/03/15加
+     * @return
+     */
+    @Override
+    public Observable<BaseBean<Object>> NEW_SALES_INFO(String start,String end,String breakfast_start,String breakfast_end,String lunch_start,String lunch_end,String dinner_start,String dinner_end) {
+        return apiService.NEW_SALES_INFO(start,end,breakfast_start,breakfast_end,lunch_start,lunch_end,dinner_start,dinner_end);
+    }
+
+    /**
+     * 提交日结 2023/03/15加
+     * @return
+     */
+    @Override
+    public Observable<BaseBean<Object>> NEW_UPDATE_DAY_SALES(String total_amount, String total_orders, String pay_amount, String reduced_amount, String cash_list) {
+        return apiService.NEW_UPDATE_DAY_SALES(total_amount,total_orders,pay_amount,reduced_amount,cash_list);
+    }
 }

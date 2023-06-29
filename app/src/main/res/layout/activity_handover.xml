@@ -47,15 +47,15 @@
                 android:layout_marginLeft="@dimen/size_34dp"
                 android:layout_toRightOf="@+id/fanhui"
                 />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="交接班"
-                android:textColor="@color/main_white"
-                android:textSize="@dimen/text_19sp"
-                android:layout_gravity="center"
                 android:layout_centerInParent="true"
-                />
+                android:layout_gravity="center"
+                android:text="日结"
+                android:textColor="@color/main_white"
+                android:textSize="@dimen/text_19sp" />
             <!-- 用户 -->
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -138,6 +138,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="@dimen/size_15dp"
                     binding:onClickCommand="@{viewModel.ThreeOnClick}"
+                    android:visibility="gone"
                     />
 
             </LinearLayout>
@@ -169,7 +170,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{viewModel.entity.recharge_amount}"
+                    android:text="@{viewModel.entity.recharge_amount.total_recharge_amount+@string/main_null}"
                     android:textSize="@dimen/text_18sp"
                     android:textColor="#FA6400"
                     />
@@ -239,7 +240,7 @@
                             android:layout_height="wrap_content"
                             android:text="￥"
                             android:textStyle="bold"
-                            android:textSize="25sp"
+                            android:textSize="25dp"
                             android:textColor="@color/main_color"
                             android:layout_gravity="bottom"
                             android:layout_marginBottom="@dimen/size_5dp"
@@ -247,9 +248,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.total_amount_list.total_amount}"
+                            android:text="@{viewModel.entity.total_amount.total_amount+@string/main_null}"
                             android:textStyle="bold"
-                            android:textSize="52sp"
+                            android:textSize="52dp"
                             android:textColor="@color/main_color"
                             android:layout_gravity="center"
                             />
@@ -272,7 +273,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.total_amount_list.wx_total_amount}"
+                            android:text="@{viewModel.entity.total_amount.we_chat+@string/main_null}"
                             android:textSize="@dimen/text_13sp"
                             android:textColor="@color/main_black_85"
                             android:layout_centerVertical="true"
@@ -299,7 +300,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.total_amount_list.zfb_total_amount}"
+                            android:text="@{viewModel.entity.total_amount.ali_pay+@string/main_null}"
                             android:textSize="@dimen/text_13sp"
                             android:textColor="@color/main_black_85"
                             android:layout_centerVertical="true"
@@ -326,7 +327,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.total_amount_list.balance_total_amount}"
+                            android:text="@{viewModel.entity.total_amount.balance+@string/main_null}"
                             android:textSize="@dimen/text_13sp"
                             android:textColor="@color/main_black_85"
                             android:layout_centerVertical="true"
@@ -353,7 +354,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.total_amount_list.xj_total_amount}"
+                            android:text="@{viewModel.entity.total_amount.cash+@string/main_null}"
                             android:textSize="@dimen/text_13sp"
                             android:textColor="@color/main_black_85"
                             android:layout_centerVertical="true"
@@ -367,6 +368,7 @@
                         android:layout_height="@dimen/size_34dp"
                         android:background="@drawable/radius_hui_5dp"
                         android:layout_marginTop="@dimen/size_7dp"
+                        android:visibility="gone"
                         >
                         <TextView
                             android:layout_width="wrap_content"
@@ -380,7 +382,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.total_amount_list.wm_total_amount}"
                             android:textSize="@dimen/text_13sp"
                             android:textColor="@color/main_black_85"
                             android:layout_centerVertical="true"
@@ -395,6 +396,7 @@
                         android:layout_height="@dimen/size_34dp"
                         android:background="@drawable/radius_hui_5dp"
                         android:layout_marginTop="@dimen/size_7dp"
+                        android:visibility="gone"
                         >
                         <TextView
                             android:layout_width="wrap_content"
@@ -408,7 +410,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.total_amount_list.zh_total_amount}"
                             android:textSize="@dimen/text_13sp"
                             android:textColor="@color/main_black_85"
                             android:layout_centerVertical="true"
@@ -450,9 +451,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.number_list.total_num}"
+                            android:text="@{viewModel.entity.total_orders.total_order+@string/main_null}"
                             android:textStyle="bold"
-                            android:textSize="52sp"
+                            android:textSize="52dp"
                             android:textColor="@color/main_color"
                             android:layout_gravity="center"
                             />
@@ -461,7 +462,7 @@
                             android:layout_height="wrap_content"
                             android:text="单"
                             android:textStyle="bold"
-                            android:textSize="25sp"
+                            android:textSize="25dp"
                             android:textColor="@color/main_color"
                             android:layout_gravity="bottom"
                             android:layout_marginBottom="@dimen/size_5dp"
@@ -486,7 +487,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.number_list.xcx_num}"
+                            android:text="@{viewModel.entity.total_orders.we_chat_order+@string/main_null}"
                             android:textSize="@dimen/text_13sp"
                             android:textColor="@color/main_black_85"
                             android:layout_centerVertical="true"
@@ -513,7 +514,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.number_list.store_num}"
+                            android:text="@{viewModel.entity.total_orders.store_order+@string/main_null}"
                             android:textSize="@dimen/text_13sp"
                             android:textColor="@color/main_black_85"
                             android:layout_centerVertical="true"
@@ -527,6 +528,7 @@
                         android:layout_height="@dimen/size_34dp"
                         android:background="@drawable/radius_hui_5dp"
                         android:layout_marginTop="@dimen/size_7dp"
+                        android:visibility="gone"
                         >
                         <TextView
                             android:layout_width="wrap_content"
@@ -540,7 +542,6 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.number_list.wm_num}"
                             android:textSize="@dimen/text_13sp"
                             android:textColor="@color/main_black_85"
                             android:layout_centerVertical="true"
@@ -584,7 +585,7 @@
                             android:layout_height="wrap_content"
                             android:text="￥"
                             android:textStyle="bold"
-                            android:textSize="25sp"
+                            android:textSize="25dp"
                             android:textColor="@color/main_color"
                             android:layout_gravity="bottom"
                             android:layout_marginBottom="@dimen/size_5dp"
@@ -592,9 +593,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.amount_list.amount}"
+                            android:text="@{viewModel.entity.pay_amount.total_pay_amount+@string/main_null}"
                             android:textStyle="bold"
-                            android:textSize="52sp"
+                            android:textSize="52dp"
                             android:textColor="@color/main_color"
                             android:layout_gravity="center"
                             />
@@ -617,7 +618,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.amount_list.wx_amount}"
+                            android:text="@{viewModel.entity.pay_amount.we_chat+@string/main_null}"
                             android:textSize="@dimen/text_13sp"
                             android:textColor="@color/main_black_85"
                             android:layout_centerVertical="true"
@@ -644,7 +645,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.amount_list.zfb_amount}"
+                            android:text="@{viewModel.entity.pay_amount.ali_pay+@string/main_null}"
                             android:textSize="@dimen/text_13sp"
                             android:textColor="@color/main_black_85"
                             android:layout_centerVertical="true"
@@ -671,7 +672,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.amount_list.balance_amount}"
+                            android:text="@{viewModel.entity.pay_amount.balance+@string/main_null}"
                             android:textSize="@dimen/text_13sp"
                             android:textColor="@color/main_black_85"
                             android:layout_centerVertical="true"
@@ -698,7 +699,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.amount_list.xj_amount}"
+                            android:text="@{viewModel.entity.pay_amount.cash+@string/main_null}"
                             android:textSize="@dimen/text_13sp"
                             android:textColor="@color/main_black_85"
                             android:layout_centerVertical="true"
@@ -712,6 +713,7 @@
                         android:layout_height="@dimen/size_34dp"
                         android:background="@drawable/radius_hui_5dp"
                         android:layout_marginTop="@dimen/size_7dp"
+                        android:visibility="gone"
                         >
                         <TextView
                             android:layout_width="wrap_content"
@@ -725,7 +727,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@{viewModel.entity.amount_list.wm_amount}"
+
                             android:textSize="@dimen/text_13sp"
                             android:textColor="@color/main_black_85"
                             android:layout_centerVertical="true"
@@ -783,7 +785,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@{viewModel.entity.other_money_list.reduced_amount}"
+                                android:text="@{viewModel.entity.reduced_amount.total_reduced_amount+@string/main_null}"
                                 android:textSize="@dimen/text_13sp"
                                 android:textColor="@color/main_black_85"
                                 android:layout_centerVertical="true"
@@ -810,7 +812,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@{viewModel.entity.other_money_list.discount_amount}"
+                                android:text="@{viewModel.entity.reduced_amount.total_discount_amount}"
                                 android:textSize="@dimen/text_13sp"
                                 android:textColor="@color/main_black_85"
                                 android:layout_centerVertical="true"
@@ -824,6 +826,7 @@
                             android:layout_height="@dimen/size_34dp"
                             android:background="@drawable/radius_hui_5dp"
                             android:layout_marginTop="@dimen/size_7dp"
+                            android:visibility="gone"
                             >
                             <TextView
                                 android:layout_width="wrap_content"
@@ -837,7 +840,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@{viewModel.entity.other_money_list.mal}"
                                 android:textSize="@dimen/text_13sp"
                                 android:textColor="@color/main_black_85"
                                 android:layout_centerVertical="true"
@@ -851,6 +853,7 @@
                             android:layout_height="@dimen/size_34dp"
                             android:background="@drawable/radius_hui_5dp"
                             android:layout_marginTop="@dimen/size_7dp"
+                            android:visibility="gone"
                             >
                             <TextView
                                 android:layout_width="wrap_content"
@@ -864,7 +867,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@{viewModel.entity.other_money_list.order_amount}"
                                 android:textSize="@dimen/text_13sp"
                                 android:textColor="@color/main_black_85"
                                 android:layout_centerVertical="true"
@@ -887,7 +889,7 @@
                 android:layout_height="@dimen/size_48dp"
                 android:orientation="horizontal"
 
-                android:layout_marginTop="@dimen/size_15dp"
+                android:layout_marginTop="@dimen/size_25dp"
                 >
                 <TextView
                     android:layout_width="match_parent"

@@ -23,6 +23,7 @@ public class UserBean implements Serializable {
     private String created_at;
     private String updated_at;
     private String store_name;//门店名称
+    private String store_address;//门店地址
     private String topic;//MQTT订阅主题
     private int is_order;//1 自动接单 2 手动接单
     private String start;//营业开始时间
@@ -122,5 +123,13 @@ public class UserBean implements Serializable {
 
     public void setStore_name(String store_name) {
         this.store_name = store_name;
+    }
+
+    public String getStore_address() {
+        return store_address;
+    }
+
+    public void setStore_address(String store_address) {
+        this.store_address = store_address;
     }
 }

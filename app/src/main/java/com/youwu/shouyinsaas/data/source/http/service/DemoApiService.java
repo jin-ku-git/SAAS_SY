@@ -522,4 +522,46 @@ public interface DemoApiService {
     @FormUrlEncoded
     @POST("order/new_refund_order")
     Observable<BaseBean<Object>> NEW_REFUNF_ORDER(@Field("store_id") String store_id, @Field("order_sn") String order_sn);
+
+    /**
+     * 日志列表     2023/03/15加
+     * @param store_id      门店id
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("report/new_day_sales")
+    Observable<BaseBean<Object>> NEW_DAY_SALES(@Field("store_id") String store_id);
+
+    /**
+     * 销售概况  2023/03/15加
+     *
+     * @param start                     开始日期
+     * @param end                       结束日期
+     * @param breakfast_start           早餐开始时间
+     * @param breakfast_end             早餐结束时间
+     * @param lunch_start               午餐开始时间
+     * @param lunch_end                 午餐结束时间
+     * @param dinner_start              晚餐开始时间
+     * @param dinner_end                晚餐结束时间
+     */
+    @FormUrlEncoded
+    @POST("report/new_sales_info")
+    Observable<BaseBean<Object>> NEW_SALES_INFO(@Field("start") String start,@Field("end") String end,@Field("breakfast_start") String breakfast_start,@Field("breakfast_end") String breakfast_end,@Field("lunch_start") String lunch_start,
+                                                @Field("lunch_end") String lunch_end,@Field("dinner_start") String dinner_start,@Field("dinner_end") String dinner_end);
+
+    /**
+     * 提交日结  2023/03/15加
+     *
+     * @param total_amount
+     * @param total_orders
+     * @param pay_amount
+     * @param reduced_amount
+     * @param cash_list
+     */
+    @FormUrlEncoded
+    @POST("report/new_update_day_sales")
+    Observable<BaseBean<Object>> NEW_UPDATE_DAY_SALES(@Field("total_amount") String total_amount,@Field("total_orders") String total_orders,@Field("pay_amount") String pay_amount,@Field("reduced_amount") String reduced_amount,
+                                                      @Field("cash_list") String cash_list);
 }
+
+

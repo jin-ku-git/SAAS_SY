@@ -56,6 +56,8 @@ public class HandoverActivity extends BaseActivity<ActivityHandoverBinding, Hand
     //副屏
     private ShowShopingDisplay showShopingDisplay = null;
 
+    private String store_id;//门店id
+
     TextView start_time;//日志报表开始时间
     TextView end_time;//日志报表结束时间
 
@@ -69,6 +71,9 @@ public class HandoverActivity extends BaseActivity<ActivityHandoverBinding, Hand
 
     int widths;//屏幕长
     int height;//屏幕宽
+
+    HandOverPopup dialog_cabinet;
+
     @Override
     public void initParam() {
         super.initParam();
@@ -106,6 +111,8 @@ public class HandoverActivity extends BaseActivity<ActivityHandoverBinding, Hand
         viewModel.logo_time.set(UserUtils.getLogoTime());
         viewModel.logo_name.set(UserUtils.getLogoName());
 
+        store_id= AppApplication.spUtils.getString("StoreId");
+
         initCustomTimePicker();
 
 
@@ -113,7 +120,10 @@ public class HandoverActivity extends BaseActivity<ActivityHandoverBinding, Hand
         long end= new Date().getTime()/1000;
         KLog.d("开始时间："+start+"\n结束时间："+end);
 
-        viewModel.shift_change(start,end+"");
+//        viewModel.shift_change(start,end+"");
+
+
+        viewModel.new_day_sales(store_id);
         getScreenSize();
 
     }
@@ -127,7 +137,7 @@ public class HandoverActivity extends BaseActivity<ActivityHandoverBinding, Hand
                 switch (integer){
                     case 1://盘点现金
 
-                        HandOverPopup dialog_cabinet =new HandOverPopup(HandoverActivity.this,handoverBeans);
+                        dialog_cabinet =new HandOverPopup(HandoverActivity.this,handoverBeans);
 
                         new  XPopup.Builder(HandoverActivity.this)
                                 .maxWidth((int) (widths * 0.7))
@@ -141,14 +151,13 @@ public class HandoverActivity extends BaseActivity<ActivityHandoverBinding, Hand
                             public void onConfirm(String total_amount_list, String number_list, String amount_list, String other_money_list, String cash_amount, String cash_total_amount) {
 
                                 //确认交接并退出
-                                viewModel.add_shift_change(total_amount_list,number_list,amount_list,other_money_list,cash_amount,cash_total_amount);
+//                                viewModel.add_shift_change(total_amount_list,number_list,amount_list,other_money_list,cash_amount,cash_total_amount);
+                                //提交日结
+                                viewModel.new_update_day_sales(total_amount_list,number_list,amount_list,other_money_list,cash_amount);
 
                             }
                         });
-
                         break;
-
-
                         case 2://销售商品列表
                             startActivity(SaleGoodsListActivity.class);
                         break;
@@ -169,6 +178,12 @@ public class HandoverActivity extends BaseActivity<ActivityHandoverBinding, Hand
                             }
                         }
                         dialog_Journal.dismiss();
+                        break;
+                    case 5://提交日志返回信息
+                        dialog_cabinet.dismiss();
+                        RxToast.showTipToast(HandoverActivity.this,"提交成功！");
+
+
                         break;
 
                 }

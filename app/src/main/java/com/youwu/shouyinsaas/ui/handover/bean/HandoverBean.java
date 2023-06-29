@@ -2,292 +2,256 @@ package com.youwu.shouyinsaas.ui.handover.bean;
 
 import java.io.Serializable;
 
+
 public class HandoverBean implements Serializable {
 
+
     /**
-     * recharge_amount : 0
-     * total_amount_list : {"total_amount":"9.30","balance_total_amount":"4.10","wx_total_amount":"5.20","zfb_total_amount":"0.00","xj_total_amount":"0.00","wm_total_amount":"0.00"}
-     * number_list : {"total_num":2,"store_num":3,"xcx_num":0,"wm_num":0}
-     * amount_list : {"amount":"9.30","balance_amount":"4.10","wx_amount":"5.20","zfb_amount":"0.00","xj_amount":"0.00","wm_amount":"0.00"}
-     * other_money_list : {"reduced_amount":"0.00","discount_amount":"0.00","mal":"0.20","order_amount":"0.00"}
+     * total_amount : {"balance":42.5,"we_chat":0,"ali_pay":0,"cash":0,"total_amount":42.5}
+     * total_orders : {"we_chat_order":1,"store_order":0,"total_order":1}
+     * pay_amount : {"balance":42.5,"we_chat":0,"ali_pay":0,"cash":0,"total_pay_amount":42.5}
+     * reduced_amount : {"total_reduced_amount":0,"total_discount_amount":"0.00"}
+     * recharge_amount : {"total_recharge_amount":0}
      */
 
-    private String recharge_amount;//今日门店充值金额
-    private TotalAmountListBean total_amount_list;//今日总销售额
-    private NumberListBean number_list;//今日销售单数
-    private AmountListBean amount_list;//今日总实收金额
-    private OtherMoneyListBean other_money_list;//其他金额
+    private TotalAmountBean total_amount;
+    private TotalOrdersBean total_orders;
+    private PayAmountBean pay_amount;
+    private ReducedAmountBean reduced_amount;
+    private RechargeAmountBean recharge_amount;
 
-    public String getRecharge_amount() {
+    public TotalAmountBean getTotal_amount() {
+        return total_amount;
+    }
+
+    public void setTotal_amount(TotalAmountBean total_amount) {
+        this.total_amount = total_amount;
+    }
+
+    public TotalOrdersBean getTotal_orders() {
+        return total_orders;
+    }
+
+    public void setTotal_orders(TotalOrdersBean total_orders) {
+        this.total_orders = total_orders;
+    }
+
+    public PayAmountBean getPay_amount() {
+        return pay_amount;
+    }
+
+    public void setPay_amount(PayAmountBean pay_amount) {
+        this.pay_amount = pay_amount;
+    }
+
+    public ReducedAmountBean getReduced_amount() {
+        return reduced_amount;
+    }
+
+    public void setReduced_amount(ReducedAmountBean reduced_amount) {
+        this.reduced_amount = reduced_amount;
+    }
+
+    public RechargeAmountBean getRecharge_amount() {
         return recharge_amount;
     }
 
-    public void setRecharge_amount(String recharge_amount) {
+    public void setRecharge_amount(RechargeAmountBean recharge_amount) {
         this.recharge_amount = recharge_amount;
     }
 
-    public TotalAmountListBean getTotal_amount_list() {
-        return total_amount_list;
-    }
-
-    public void setTotal_amount_list(TotalAmountListBean total_amount_list) {
-        this.total_amount_list = total_amount_list;
-    }
-
-    public NumberListBean getNumber_list() {
-        return number_list;
-    }
-
-    public void setNumber_list(NumberListBean number_list) {
-        this.number_list = number_list;
-    }
-
-    public AmountListBean getAmount_list() {
-        return amount_list;
-    }
-
-    public void setAmount_list(AmountListBean amount_list) {
-        this.amount_list = amount_list;
-    }
-
-    public OtherMoneyListBean getOther_money_list() {
-        return other_money_list;
-    }
-
-    public void setOther_money_list(OtherMoneyListBean other_money_list) {
-        this.other_money_list = other_money_list;
-    }
-
-    public static class TotalAmountListBean {
+    public static class TotalAmountBean implements Serializable {
         /**
-         * total_amount : 9.30
-         * balance_total_amount : 4.10
-         * wx_total_amount : 5.20
-         * zfb_total_amount : 0.00
-         * xj_total_amount : 0.00
-         * wm_total_amount : 0.00
+         * balance : 42.5
+         * we_chat : 0
+         * ali_pay : 0
+         * cash : 0
+         * total_amount : 42.5
          */
 
-        private String total_amount;
-        private String balance_total_amount;
-        private String wx_total_amount;
-        private String zfb_total_amount;
-        private String xj_total_amount;
-        private String wm_total_amount;
-        private String zh_total_amount;
+        private double balance;
+        private double we_chat;
+        private double ali_pay;
+        private double cash;
+        private double total_amount;
 
-        public String getZh_total_amount() {
-            return zh_total_amount;
+        public double getBalance() {
+            return balance;
         }
 
-        public void setZh_total_amount(String zh_total_amount) {
-            this.zh_total_amount = zh_total_amount;
+        public void setBalance(double balance) {
+            this.balance = balance;
         }
 
-        public String getTotal_amount() {
+        public double getWe_chat() {
+            return we_chat;
+        }
+
+        public void setWe_chat(double we_chat) {
+            this.we_chat = we_chat;
+        }
+
+        public double getAli_pay() {
+            return ali_pay;
+        }
+
+        public void setAli_pay(double ali_pay) {
+            this.ali_pay = ali_pay;
+        }
+
+        public double getCash() {
+            return cash;
+        }
+
+        public void setCash(double cash) {
+            this.cash = cash;
+        }
+
+        public double getTotal_amount() {
             return total_amount;
         }
 
-        public void setTotal_amount(String total_amount) {
+        public void setTotal_amount(double total_amount) {
             this.total_amount = total_amount;
         }
+    }
 
-        public String getBalance_total_amount() {
-            return balance_total_amount;
+    
+    public static class TotalOrdersBean implements Serializable {
+        /**
+         * we_chat_order : 1
+         * store_order : 0
+         * total_order : 1
+         */
+
+        private int we_chat_order;
+        private int store_order;
+        private int total_order;
+
+        public int getWe_chat_order() {
+            return we_chat_order;
         }
 
-        public void setBalance_total_amount(String balance_total_amount) {
-            this.balance_total_amount = balance_total_amount;
+        public void setWe_chat_order(int we_chat_order) {
+            this.we_chat_order = we_chat_order;
         }
 
-        public String getWx_total_amount() {
-            return wx_total_amount;
+        public int getStore_order() {
+            return store_order;
         }
 
-        public void setWx_total_amount(String wx_total_amount) {
-            this.wx_total_amount = wx_total_amount;
+        public void setStore_order(int store_order) {
+            this.store_order = store_order;
         }
 
-        public String getZfb_total_amount() {
-            return zfb_total_amount;
+        public int getTotal_order() {
+            return total_order;
         }
 
-        public void setZfb_total_amount(String zfb_total_amount) {
-            this.zfb_total_amount = zfb_total_amount;
-        }
-
-        public String getXj_total_amount() {
-            return xj_total_amount;
-        }
-
-        public void setXj_total_amount(String xj_total_amount) {
-            this.xj_total_amount = xj_total_amount;
-        }
-
-        public String getWm_total_amount() {
-            return wm_total_amount;
-        }
-
-        public void setWm_total_amount(String wm_total_amount) {
-            this.wm_total_amount = wm_total_amount;
+        public void setTotal_order(int total_order) {
+            this.total_order = total_order;
         }
     }
 
-    public static class NumberListBean {
+    
+    public static class PayAmountBean implements Serializable {
         /**
-         * total_num : 2
-         * store_num : 3
-         * xcx_num : 0
-         * wm_num : 0
+         * balance : 42.5
+         * we_chat : 0
+         * ali_pay : 0
+         * cash : 0
+         * total_pay_amount : 42.5
          */
 
-        private String total_num;
-        private String store_num;
-        private String xcx_num;
-        private String wm_num;
+        private double balance;
+        private double we_chat;
+        private double ali_pay;
+        private double cash;
+        private double total_pay_amount;
 
-        public String getTotal_num() {
-            return total_num;
+        public double getBalance() {
+            return balance;
         }
 
-        public void setTotal_num(String total_num) {
-            this.total_num = total_num;
+        public void setBalance(double balance) {
+            this.balance = balance;
         }
 
-        public String getStore_num() {
-            return store_num;
+        public double getWe_chat() {
+            return we_chat;
         }
 
-        public void setStore_num(String store_num) {
-            this.store_num = store_num;
+        public void setWe_chat(double we_chat) {
+            this.we_chat = we_chat;
         }
 
-        public String getXcx_num() {
-            return xcx_num;
+        public double getAli_pay() {
+            return ali_pay;
         }
 
-        public void setXcx_num(String xcx_num) {
-            this.xcx_num = xcx_num;
+        public void setAli_pay(double ali_pay) {
+            this.ali_pay = ali_pay;
         }
 
-        public String getWm_num() {
-            return wm_num;
+        public double getCash() {
+            return cash;
         }
 
-        public void setWm_num(String wm_num) {
-            this.wm_num = wm_num;
+        public void setCash(double cash) {
+            this.cash = cash;
+        }
+
+        public double getTotal_pay_amount() {
+            return total_pay_amount;
+        }
+
+        public void setTotal_pay_amount(double total_pay_amount) {
+            this.total_pay_amount = total_pay_amount;
         }
     }
 
-    public static class AmountListBean {
+    
+    public static class ReducedAmountBean implements Serializable {
         /**
-         * amount : 9.30
-         * balance_amount : 4.10
-         * wx_amount : 5.20
-         * zfb_amount : 0.00
-         * xj_amount : 0.00
-         * wm_amount : 0.00
+         * total_reduced_amount : 0
+         * total_discount_amount : 0.00
          */
 
-        private String amount;
-        private String balance_amount;
-        private String wx_amount;
-        private String zfb_amount;
-        private String xj_amount;
-        private String wm_amount;
+        private double total_reduced_amount;
+        private String total_discount_amount;
 
-        public String getAmount() {
-            return amount;
+        public double getTotal_reduced_amount() {
+            return total_reduced_amount;
         }
 
-        public void setAmount(String amount) {
-            this.amount = amount;
+        public void setTotal_reduced_amount(double total_reduced_amount) {
+            this.total_reduced_amount = total_reduced_amount;
         }
 
-        public String getBalance_amount() {
-            return balance_amount;
+        public String getTotal_discount_amount() {
+            return total_discount_amount;
         }
 
-        public void setBalance_amount(String balance_amount) {
-            this.balance_amount = balance_amount;
-        }
-
-        public String getWx_amount() {
-            return wx_amount;
-        }
-
-        public void setWx_amount(String wx_amount) {
-            this.wx_amount = wx_amount;
-        }
-
-        public String getZfb_amount() {
-            return zfb_amount;
-        }
-
-        public void setZfb_amount(String zfb_amount) {
-            this.zfb_amount = zfb_amount;
-        }
-
-        public String getXj_amount() {
-            return xj_amount;
-        }
-
-        public void setXj_amount(String xj_amount) {
-            this.xj_amount = xj_amount;
-        }
-
-        public String getWm_amount() {
-            return wm_amount;
-        }
-
-        public void setWm_amount(String wm_amount) {
-            this.wm_amount = wm_amount;
+        public void setTotal_discount_amount(String total_discount_amount) {
+            this.total_discount_amount = total_discount_amount;
         }
     }
 
-    public static class OtherMoneyListBean {
+    
+    public static class RechargeAmountBean implements Serializable {
         /**
-         * reduced_amount : 0.00
-         * discount_amount : 0.00
-         * mal : 0.20
-         * order_amount : 0.00
+         * total_recharge_amount : 0
          */
 
-        private String reduced_amount;
-        private String discount_amount;
-        private String mal;
-        private String order_amount;
+        private double total_recharge_amount;
 
-        public String getReduced_amount() {
-            return reduced_amount;
+        public double getTotal_recharge_amount() {
+            return total_recharge_amount;
         }
 
-        public void setReduced_amount(String reduced_amount) {
-            this.reduced_amount = reduced_amount;
-        }
-
-        public String getDiscount_amount() {
-            return discount_amount;
-        }
-
-        public void setDiscount_amount(String discount_amount) {
-            this.discount_amount = discount_amount;
-        }
-
-        public String getMal() {
-            return mal;
-        }
-
-        public void setMal(String mal) {
-            this.mal = mal;
-        }
-
-        public String getOrder_amount() {
-            return order_amount;
-        }
-
-        public void setOrder_amount(String order_amount) {
-            this.order_amount = order_amount;
+        public void setTotal_recharge_amount(double total_recharge_amount) {
+            this.total_recharge_amount = total_recharge_amount;
         }
     }
 }
+

@@ -41,6 +41,7 @@ import com.youwu.shouyinsaas.queue.LogTask;
 import com.youwu.shouyinsaas.queue.TaskPriority;
 import com.youwu.shouyinsaas.sunmi.PrintBean;
 import com.youwu.shouyinsaas.ui.bean.VipBean;
+import com.youwu.shouyinsaas.ui.main.MainActivity;
 import com.youwu.shouyinsaas.ui.main.adapter.CouponListRecycleAdapter;
 import com.youwu.shouyinsaas.ui.main.bean.CommunityBean;
 import com.youwu.shouyinsaas.ui.main.bean.CouponBean;
@@ -208,6 +209,11 @@ public class CashierActivity extends BaseActivity<ActivityCashierBinding, Cashie
                 new LogTask("DEFAULT","支付成功")
                         .setPriority(TaskPriority.DEFAULT) //设置优先级，默认是DEFAULT
                         .enqueue(); //入队
+                if("4".equals(payList.getType())) {//当时现金支付时，打开钱箱
+                    AppApplication.getInstance().openDraw();
+                    RxToast.showTipToast(CashierActivity.this, "打开钱箱");
+                }
+
                 if (binding.journalCheck.isChecked()) {
                     PrintBean printBean = new PrintBean();
 
@@ -270,7 +276,14 @@ public class CashierActivity extends BaseActivity<ActivityCashierBinding, Cashie
 //                    if (printType == 1) {
 //                        printerPresenter.print2(printBean,2);
 //                    }
-                    printerPresenter.print2(printBean,2);
+                    if (printType == 0) {
+                        printerPresenter.print(printBean);
+                    } else if (printType == 1) {
+                        printerPresenter.print2(printBean, 2);
+                    } else {
+                        printerPresenter.print3(printBean);
+                    }
+
 
                 }
 

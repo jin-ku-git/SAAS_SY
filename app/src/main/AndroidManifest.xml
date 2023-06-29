@@ -73,6 +73,7 @@
         <activity android:name=".ui.money.VipRechargeActivity"/>
         <activity android:name=".ui.money.SalesDocumentActivity"/>
         <activity android:name=".ui.money.CouponPushActivity"/>
+        <activity android:name=".ui.money.SalesOverviewTwoActivity"/>
         <activity android:name=".ui.vip.AddVipActivity"/>
         <activity android:name=".ui.handover.HandoverActivity"/>
         <activity android:name=".ui.handover.SaleGoodsListActivity"/>

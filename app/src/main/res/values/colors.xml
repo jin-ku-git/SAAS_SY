@@ -13,6 +13,8 @@
     <color name="main_yellow">#F7B500</color>
     <color name="main_green">#6DD400</color>
     <color name="main_white">#FFFFFF</color>
+    <color name="main_white_f1">#f1f1f1</color>
+    <color name="main_white_f8">#f8f8f8</color>
     <color name="main_black">#000000</color>
     <color name="main_black_25">#40000000</color>
     <color name="main_black_50">#80000000</color>
@@ -43,5 +45,9 @@
     <color name="null_gray">#ededed</color>
     <color name="font_black"> #2f2f2f</color>
     <color name="gray_a9">#a9a9a9</color>
+    <color name="date_duration_bg">#41D2C4</color>
+    <color name="text_main_tab_select">#F25D5F</color>
+    <color name="date_time_tv">#ffffff</color>
+    <color name="text_lable">#41D2C4</color>
 
 </resources>

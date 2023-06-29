@@ -78,64 +78,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="@dimen/size_15dp"
+
                     >
-                    <com.youwu.shouyinsaas.utils_view.ScaleLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/size_10dp"
-                        android:layout_weight="1"
 
-                        >
-                        <Button
-                            android:id="@+id/button_6"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:background="@drawable/radius_qian_hui_8dp"
-                            android:drawableTop="@mipmap/set_up"
-                            android:drawablePadding="5dp"
-                            android:gravity="center"
-                            android:paddingTop="@dimen/size_30dp"
-                            android:text="通用设置"
-                            android:textColor="#181818"
-                            android:textSize="@dimen/text_14sp"
-                            binding:onClickCommand="@{viewModel.SetUpOnClick}"
-                            />
-                    </com.youwu.shouyinsaas.utils_view.ScaleLayout>
-
-
-
-                    <com.youwu.shouyinsaas.utils_view.ScaleLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        android:layout_weight="1"
-                        android:padding="@dimen/size_10dp"
-
-                        >
-                        <Button
-                            android:id="@+id/button_8"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:background="@drawable/radius_qian_hui_8dp"
-                            android:drawableTop="@mipmap/wenhao_blue"
-                            android:drawablePadding="5dp"
-                            android:gravity="center"
-                            android:paddingTop="@dimen/size_30dp"
-                            android:text="打印设置"
-                            android:textColor="#181818"
-                            android:textSize="@dimen/text_14sp"
-                            binding:onClickCommand="@{viewModel.SetPrintOnClick}"
-                            />
-                    </com.youwu.shouyinsaas.utils_view.ScaleLayout>
                     <com.youwu.shouyinsaas.utils_view.ScaleLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -182,74 +127,6 @@
                             android:visibility="gone"
                             />
                     </com.youwu.shouyinsaas.utils_view.ScaleLayout>
-                    <com.youwu.shouyinsaas.utils_view.ScaleLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-
-                        android:layout_weight="1"
-                        android:padding="@dimen/size_10dp"
-                        android:visibility="invisible"
-
-                        >
-                        <Button
-                            android:id="@+id/button_5"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="7dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginEnd="7dp"
-                            android:layout_marginBottom="5dp"
-                            android:background="@drawable/radius_qian_hui_8dp"
-                            android:drawableTop="@mipmap/activity_fill"
-                            android:drawablePadding="5dp"
-                            android:gravity="center"
-                            android:paddingTop="@dimen/size_30dp"
-                            android:text="销售概况"
-                            android:textColor="#181818"
-                            android:textSize="@dimen/text_14sp"
-                            binding:onClickCommand="@{viewModel.SalesOverviewOnClick}"
-                            />
-                    </com.youwu.shouyinsaas.utils_view.ScaleLayout>
-
-
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:visibility="gone"
-                    >
-
-
-                    <com.youwu.shouyinsaas.utils_view.ScaleLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/size_10dp"
-                        android:layout_weight="1"
-
-
-                        >
-                        <Button
-                            android:id="@+id/button_7"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="5dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:background="@drawable/radius_qian_hui_8dp"
-                            android:drawableTop="@mipmap/set_up"
-                            android:drawablePadding="5dp"
-                            android:gravity="center"
-                            android:paddingTop="@dimen/size_30dp"
-                            android:text="门店设置"
-                            android:textColor="#181818"
-                            android:textSize="@dimen/text_14sp"
-                            binding:onClickCommand="@{viewModel.StoreSetUpOnClick}"
-                            />
-                    </com.youwu.shouyinsaas.utils_view.ScaleLayout>
-
 
                     <com.youwu.shouyinsaas.utils_view.ScaleLayout
                         android:layout_width="match_parent"
@@ -257,7 +134,6 @@
                        
                         android:layout_weight="1"
                         android:padding="@dimen/size_10dp"
-
 
                         >
                         <Button
@@ -306,14 +182,131 @@
                             binding:onClickCommand="@{viewModel.InventoryOnClick}"
                             />
                     </com.youwu.shouyinsaas.utils_view.ScaleLayout>
+                    <com.youwu.shouyinsaas.utils_view.ScaleLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                       
+                        android:layout_weight="1"
+                        android:padding="@dimen/size_10dp"
+
+                        >
+                        <Button
+                            android:id="@+id/button_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="7dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="7dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/radius_qian_hui_8dp"
+                            android:drawableTop="@mipmap/activity_fill"
+                            android:drawablePadding="5dp"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/size_30dp"
+                            android:text="销售概况"
+                            android:textColor="#181818"
+                            android:textSize="@dimen/text_14sp"
+                            binding:onClickCommand="@{viewModel.SalesOverviewOnClick}"
+                            />
+                    </com.youwu.shouyinsaas.utils_view.ScaleLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/size_15dp"
+                    >
+                    <com.youwu.shouyinsaas.utils_view.ScaleLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/size_10dp"
+                        android:layout_weight="1"
+
+                        >
+                        <Button
+                            android:id="@+id/button_6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/radius_qian_hui_8dp"
+                            android:drawableTop="@mipmap/set_up"
+                            android:drawablePadding="5dp"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/size_30dp"
+                            android:text="通用设置"
+                            android:textColor="#181818"
+                            android:textSize="@dimen/text_14sp"
+                            binding:onClickCommand="@{viewModel.SetUpOnClick}"
+                            />
+                    </com.youwu.shouyinsaas.utils_view.ScaleLayout>
 
                     <com.youwu.shouyinsaas.utils_view.ScaleLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:padding="@dimen/size_10dp"
+                        android:layout_weight="1"
 
+                        >
+                        <Button
+                            android:id="@+id/button_7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/radius_qian_hui_8dp"
+                            android:drawableTop="@mipmap/set_up"
+                            android:drawablePadding="5dp"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/size_30dp"
+                            android:text="门店设置"
+                            android:textColor="#181818"
+                            android:textSize="@dimen/text_14sp"
+                            binding:onClickCommand="@{viewModel.StoreSetUpOnClick}"
+                            />
+                    </com.youwu.shouyinsaas.utils_view.ScaleLayout>
+
+                    <com.youwu.shouyinsaas.utils_view.ScaleLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                       
                         android:layout_weight="1"
                         android:padding="@dimen/size_10dp"
 
+                        >
+                        <Button
+                            android:id="@+id/button_8"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/radius_qian_hui_8dp"
+                            android:drawableTop="@mipmap/wenhao_blue"
+                            android:drawablePadding="5dp"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/size_30dp"
+                            android:text="打印设置"
+                            android:textColor="#181818"
+                            android:textSize="@dimen/text_14sp"
+                            binding:onClickCommand="@{viewModel.SetPrintOnClick}"
+                            />
+                    </com.youwu.shouyinsaas.utils_view.ScaleLayout>
+
+                    <com.youwu.shouyinsaas.utils_view.ScaleLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                       
+                        android:layout_weight="1"
+                        android:padding="@dimen/size_10dp"
                         >
                         <Button
                             android:id="@+id/button_9"
@@ -336,9 +329,8 @@
 
                     </com.youwu.shouyinsaas.utils_view.ScaleLayout>
 
+
                 </LinearLayout>
-
-
             </LinearLayout>
 
 
@@ -390,7 +382,7 @@
 <!--                                android:layout_weight="1"-->
 <!--                                binding:onClickCommand="@{viewModel.SalesDocumentsOnClick}"-->
 <!--                                >-->
-<!--                                <com.youwu.shouyin_saas.utils_view.CustomRoundAngleImageView-->
+<!--                                <com.youwu.shouyinsaas.utils_view.CustomRoundAngleImageView-->
 <!--                                    android:layout_width="@dimen/size_35dp"-->
 <!--                                    android:layout_height="@dimen/size_35dp"-->
 <!--                                    tools:src="@mipmap/danju"-->
@@ -418,7 +410,7 @@
 <!--                                android:layout_weight="1"-->
 <!--                                binding:onClickCommand="@{viewModel.NetworkOrderOnClick}"-->
 <!--                                >-->
-<!--                                <com.youwu.shouyin_saas.utils_view.CustomRoundAngleImageView-->
+<!--                                <com.youwu.shouyinsaas.utils_view.CustomRoundAngleImageView-->
 <!--                                    android:layout_width="@dimen/size_35dp"-->
 <!--                                    android:layout_height="@dimen/size_35dp"-->
 <!--                                    tools:src="@mipmap/logo"-->
@@ -447,7 +439,7 @@
 <!--                                android:layout_weight="1"-->
 <!--                                binding:onClickCommand="@{viewModel.WriteOffOnClick}"-->
 <!--                                >-->
-<!--                                <com.youwu.shouyin_saas.utils_view.CustomRoundAngleImageView-->
+<!--                                <com.youwu.shouyinsaas.utils_view.CustomRoundAngleImageView-->
 <!--                                    android:layout_width="@dimen/size_35dp"-->
 <!--                                    android:layout_height="@dimen/size_35dp"-->
 <!--                                    tools:src="@mipmap/logo"-->
@@ -557,7 +549,7 @@
 <!--                                android:layout_weight="1"-->
 <!--                                binding:onClickCommand="@{viewModel.AddGoodsOnClick}"-->
 <!--                                >-->
-<!--                                <com.youwu.shouyin_saas.utils_view.CustomRoundAngleImageView-->
+<!--                                <com.youwu.shouyinsaas.utils_view.CustomRoundAngleImageView-->
 <!--                                    android:layout_width="@dimen/size_35dp"-->
 <!--                                    android:layout_height="@dimen/size_35dp"-->
 <!--                                    tools:src="@mipmap/logo"-->
@@ -585,7 +577,7 @@
 <!--                                android:layout_weight="1"-->
 <!--                                binding:onClickCommand="@{viewModel.AddSetMealOnClick}"-->
 <!--                                >-->
-<!--                                <com.youwu.shouyin_saas.utils_view.CustomRoundAngleImageView-->
+<!--                                <com.youwu.shouyinsaas.utils_view.CustomRoundAngleImageView-->
 <!--                                    android:layout_width="@dimen/size_35dp"-->
 <!--                                    android:layout_height="@dimen/size_35dp"-->
 <!--                                    tools:src="@mipmap/logo"-->
@@ -614,7 +606,7 @@
 <!--                                android:layout_weight="1"-->
 <!--                                binding:onClickCommand="@{viewModel.EditGoodsOnClick}"-->
 <!--                                >-->
-<!--                                <com.youwu.shouyin_saas.utils_view.CustomRoundAngleImageView-->
+<!--                                <com.youwu.shouyinsaas.utils_view.CustomRoundAngleImageView-->
 <!--                                    android:layout_width="@dimen/size_35dp"-->
 <!--                                    android:layout_height="@dimen/size_35dp"-->
 <!--                                    tools:src="@mipmap/logo"-->
@@ -641,7 +633,7 @@
 <!--                                android:layout_weight="1"-->
 <!--                                binding:onClickCommand="@{viewModel.SellOutOnClick}"-->
 <!--                                >-->
-<!--                                <com.youwu.shouyin_saas.utils_view.CustomRoundAngleImageView-->
+<!--                                <com.youwu.shouyinsaas.utils_view.CustomRoundAngleImageView-->
 <!--                                    android:layout_width="@dimen/size_35dp"-->
 <!--                                    android:layout_height="@dimen/size_35dp"-->
 <!--                                    tools:src="@mipmap/logo"-->
@@ -739,7 +731,7 @@
 <!--                                android:layout_weight="1"-->
 <!--                                binding:onClickCommand="@{viewModel.OrderGoodsOnClick}"-->
 <!--                                >-->
-<!--                                <com.youwu.shouyin_saas.utils_view.CustomRoundAngleImageView-->
+<!--                                <com.youwu.shouyinsaas.utils_view.CustomRoundAngleImageView-->
 <!--                                    android:layout_width="@dimen/size_35dp"-->
 <!--                                    android:layout_height="@dimen/size_35dp"-->
 <!--                                    tools:src="@mipmap/dinghuo"-->
@@ -767,7 +759,7 @@
 <!--                                android:layout_weight="1"-->
 <!--                                binding:onClickCommand="@{viewModel.InventoryOnClick}"-->
 <!--                                >-->
-<!--                                <com.youwu.shouyin_saas.utils_view.CustomRoundAngleImageView-->
+<!--                                <com.youwu.shouyinsaas.utils_view.CustomRoundAngleImageView-->
 <!--                                    android:layout_width="@dimen/size_35dp"-->
 <!--                                    android:layout_height="@dimen/size_35dp"-->
 <!--                                    tools:src="@mipmap/logo"-->
@@ -884,7 +876,7 @@
 <!--                                android:layout_weight="1"-->
 <!--                                binding:onClickCommand="@{viewModel.HandoverOnClick}"-->
 <!--                                >-->
-<!--                                <com.youwu.shouyin_saas.utils_view.CustomRoundAngleImageView-->
+<!--                                <com.youwu.shouyinsaas.utils_view.CustomRoundAngleImageView-->
 <!--                                    android:layout_width="@dimen/size_35dp"-->
 <!--                                    android:layout_height="@dimen/size_35dp"-->
 <!--                                    tools:src="@mipmap/jiaojieban"-->
@@ -912,7 +904,7 @@
 <!--                                android:layout_weight="1"-->
 <!--                                binding:onClickCommand="@{viewModel.SetUpOnClick}"-->
 <!--                                >-->
-<!--                                <com.youwu.shouyin_saas.utils_view.CustomRoundAngleImageView-->
+<!--                                <com.youwu.shouyinsaas.utils_view.CustomRoundAngleImageView-->
 <!--                                    android:layout_width="@dimen/size_35dp"-->
 <!--                                    android:layout_height="@dimen/size_35dp"-->
 <!--                                    tools:src="@mipmap/logo"-->
@@ -941,7 +933,7 @@
 <!--                                android:layout_weight="1"-->
 <!--                                binding:onClickCommand="@{viewModel.SalesOverviewOnClick}"-->
 <!--                                >-->
-<!--                                <com.youwu.shouyin_saas.utils_view.CustomRoundAngleImageView-->
+<!--                                <com.youwu.shouyinsaas.utils_view.CustomRoundAngleImageView-->
 <!--                                    android:layout_width="@dimen/size_35dp"-->
 <!--                                    android:layout_height="@dimen/size_35dp"-->
 <!--                                    tools:src="@mipmap/logo"-->
@@ -966,7 +958,7 @@
 <!--                            android:layout_weight="1"-->
 <!--                            binding:onClickCommand="@{viewModel.SetPrintOnClick}"-->
 <!--                            >-->
-<!--                            <com.youwu.shouyin_saas.utils_view.CustomRoundAngleImageView-->
+<!--                            <com.youwu.shouyinsaas.utils_view.CustomRoundAngleImageView-->
 <!--                                android:layout_width="@dimen/size_35dp"-->
 <!--                                android:layout_height="@dimen/size_35dp"-->
 <!--                                tools:src="@mipmap/logo"-->

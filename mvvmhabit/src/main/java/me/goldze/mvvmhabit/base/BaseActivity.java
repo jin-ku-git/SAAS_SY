@@ -46,6 +46,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Map;
 
 import androidx.annotation.NonNull;
@@ -907,6 +908,57 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
             serial = android.os.Build.SERIAL;
         } catch (Exception e) { }
         return serial;
+    }
+
+
+    public String Week(String dateTime) {
+        String week = "";
+        switch (getDayofWeek(dateTime)) {
+            case 1:
+                week = "星期日";
+                break;
+            case 2:
+                week = "星期一";
+                break;
+            case 3:
+                week = "星期二";
+                break;
+            case 4:
+                week = "星期三";
+                break;
+            case 5:
+                week = "星期四";
+                break;
+            case 6:
+                week = "星期五";
+                break;
+            case 7:
+                week = "星期六";
+                break;
+        }
+        return week;
+    }
+
+
+    private int getDayofWeek(String dateTime) {
+
+        Calendar cal = Calendar.getInstance();
+        if (dateTime.equals("")) {
+            cal.setTime(new Date(System.currentTimeMillis()));
+        } else {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+            Date date;
+            try {
+                date = sdf.parse(dateTime);
+            } catch (ParseException e) {
+                date = null;
+                e.printStackTrace();
+            }
+            if (date != null) {
+                cal.setTime(new Date(date.getTime()));
+            }
+        }
+        return cal.get(Calendar.DAY_OF_WEEK);
     }
 
 

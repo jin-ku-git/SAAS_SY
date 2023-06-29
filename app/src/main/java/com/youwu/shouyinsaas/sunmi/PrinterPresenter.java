@@ -677,7 +677,7 @@ public class PrinterPresenter {
                     }
                     printerService.setAlignment(1, null);//0左对齐   1中  2右
                     if (printBean.getOnlion()) {
-                        printerService.printTextWithFont("取餐号:" + printBean.getFoodCode() + "", "", 30, null);
+                        printerService.printTextWithFont("取餐号:" + printBean.getPick_code() + "", "", 30, null);
                         printerService.lineWrap(1, null);
                         printerService.setAlignment(0, null);//0左对齐   1中  2右
                         printerService.printTextWithFont("订单类型：" +printBean.getDeliveryType()+ "\n", "", fontsizeContent, null);
@@ -702,8 +702,9 @@ public class PrinterPresenter {
 
                     printerService.printTextWithFont("门店：" + AppApplication.spUtils.getString("StoreName") + "\n", "", fontsizeContent, null);
                     printerService.printTextWithFont(divide, "", fontsizeContent, null);
-                    printerService.printTextWithFont("收银员：" + printBean.getCashier() + "\n", "", fontsizeContent,
-                            null);
+                    printerService.printTextWithFont("门店地址：" + AppApplication.spUtils.getString("StoreAddress") + "\n", "", fontsizeContent, null);
+                    printerService.printTextWithFont(divide, "", fontsizeContent, null);
+                    printerService.printTextWithFont("收银员：" + printBean.getCashier() + "\n", "", fontsizeContent, null);
                     printerService.printTextWithFont(divide, "", fontsizeContent, null);
                     printerService.printTextWithFont("订单编号：" + printBean.getOrder_sn() + "\n", "", fontsizeContent, null);
                     printerService.printTextWithFont(divide, "", fontsizeContent, null);
@@ -902,7 +903,7 @@ public class PrinterPresenter {
                         }
 
                         list.add(StringUtils.strTobytes("店名：" + AppApplication.spUtils.getString("StoreName") + "\n"));
-                        list.add(StringUtils.strTobytes("地址：" + AppApplication.spUtils.getString("StoreName") + "\n"));
+                        list.add(StringUtils.strTobytes("地址：" + AppApplication.spUtils.getString("StoreAddress") + "\n"));
                         list.add(StringUtils.strTobytes("收银员：" + printBean.getCashier() + "\n"));
                         list.add(StringUtils.strTobytes("-----------------------------------------" + "\n"));
                         list.add(StringUtils.strTobytes("订单编号：" + printBean.getOrder_sn() + "\n"));

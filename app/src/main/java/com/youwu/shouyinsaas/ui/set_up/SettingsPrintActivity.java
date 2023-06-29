@@ -107,40 +107,40 @@ public class SettingsPrintActivity extends BaseActivity<ActivitySettingsPrintBin
             initDisplay();
         }
 
-//        binding.spinner.setItems("商米内置打印机标准样式", "芯烨80mmUSB打印机", "商米内置打印机精简样式");
-        binding.spinner.setItems( "芯烨80mmUSB打印机");
+        binding.spinner.setItems("商米内置打印机标准样式", "芯烨80mmUSB打印机", "商米内置打印机精简样式");
+//        binding.spinner.setItems( "芯烨80mmUSB打印机");
         printType = AppApplication.spUtils.getInt("printType", 0);
-        binding.spinner.setSelectedIndex(0);
+        binding.spinner.setSelectedIndex(printType);
 
-////为未下拉的菜单项设置点击事件
-//        binding.spinner.setOnItemSelectedListener(new com.jaredrummler.materialspinner.MaterialSpinner.OnItemSelectedListener() {
-//            @Override
-//            public void onItemSelected(com.jaredrummler.materialspinner.MaterialSpinner view, int position, long id, Object item) {
-//                RxToast.normal("Clicked " + item);
-//                switch (position) {
-//                    case 0:
-//                        printType = 0;
-//                        AppApplication.spUtils.put("printType", 0);
-//                        break;
-//                    case 1:
-//                        if (ISCONNECT) {
-//                            printType = 1;
-//                            AppApplication.spUtils.put("printType", 1);
-//                        } else {
-//                            Log.d("打印机2", position + "");
-//                            AppApplication.spUtils.put("printType", 0);
-//                            AppApplication.mSpeechSynthesizer.speak("芯烨打印机连接失败，请检查连接线或重启应用");
-//                        }
-//                        break;
-//
-//                    case 2:
-//                        printType = 2;
-//                        AppApplication.spUtils.put("printType", 2);
-//                        break;
-//
-//                }
-//            }
-//        });
+//为未下拉的菜单项设置点击事件
+        binding.spinner.setOnItemSelectedListener(new com.jaredrummler.materialspinner.MaterialSpinner.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(com.jaredrummler.materialspinner.MaterialSpinner view, int position, long id, Object item) {
+                RxToast.normal("Clicked " + item);
+                switch (position) {
+                    case 0:
+                        printType = 0;
+                        AppApplication.spUtils.put("printType", 0);
+                        break;
+                    case 1:
+                        if (ISCONNECT) {
+                            printType = 1;
+                            AppApplication.spUtils.put("printType", 1);
+                        } else {
+                            Log.d("打印机2", position + "");
+                            AppApplication.spUtils.put("printType", 0);
+                            AppApplication.mSpeechSynthesizer.speak("芯烨打印机连接失败，请检查连接线或重启应用");
+                        }
+                        break;
+
+                    case 2:
+                        printType = 2;
+                        AppApplication.spUtils.put("printType", 2);
+                        break;
+
+                }
+            }
+        });
         //为未下拉的菜单项设置点击事件
         binding.spinner.setOnItemSelectedListener(new com.jaredrummler.materialspinner.MaterialSpinner.OnItemSelectedListener() {
             @Override

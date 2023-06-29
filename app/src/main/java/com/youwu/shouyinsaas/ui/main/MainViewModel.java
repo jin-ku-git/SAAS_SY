@@ -21,6 +21,7 @@ import com.youwu.shouyinsaas.ui.main.bean.RowsBean;
 import com.youwu.shouyinsaas.ui.main.bean.UserBean;
 import com.youwu.shouyinsaas.ui.main.bean.XXCOrderBean;
 import com.youwu.shouyinsaas.ui.main.bean.XXCOrderCountBean;
+import com.youwu.shouyinsaas.ui.money.SalesOverviewTwoActivity;
 import com.youwu.shouyinsaas.ui.money.bean.SaleBillBean;
 import com.youwu.shouyinsaas.ui.set_up.SetUpActivity;
 import com.youwu.shouyinsaas.ui.set_up.SettingsPrintActivity;
@@ -123,6 +124,7 @@ public class MainViewModel extends BaseViewModel<DemoRepository> {
             IntegerEvent.setValue(3);
         }
     });
+
     //销售单据的点击事件
     public BindingCommand SalesDocumentOnClick = new BindingCommand(new BindingAction() {
         @Override
@@ -250,6 +252,14 @@ public class MainViewModel extends BaseViewModel<DemoRepository> {
         }
     });
 
+    //销售概况的点击事件
+    public BindingCommand XiaoShouGaiKuangOnClick = new BindingCommand(new BindingAction() {
+        @Override
+        public void call() {
+            startActivity(SalesOverviewTwoActivity.class);
+        }
+    });
+
     /**
      * 获取群组
      * @param store_id 门店id
@@ -368,6 +378,7 @@ public class MainViewModel extends BaseViewModel<DemoRepository> {
 
                             AppApplication.spUtils.put("StoreId", userBean.getStore_id()+"");
                             AppApplication.spUtils.put("StoreName", userBean.getStore_name());
+                            AppApplication.spUtils.put("StoreAddress", userBean.getStore_name());
                             AppApplication.spUtils.put("Id", userBean.getId()+"");
                             AppApplication.spUtils.put("Name", userBean.getName());
                             AppApplication.spUtils.put("topic", userBean.getTopic());

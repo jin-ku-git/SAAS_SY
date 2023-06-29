@@ -139,4 +139,10 @@ public interface HttpDataSource {
     Observable<BaseBean<Object>> SETTING_LIST();
     //反结帐（审核退款订单）
     Observable<BaseBean<Object>> NEW_REFUNF_ORDER(String store_id,String order_sn);
+    //日志列表
+    Observable<BaseBean<Object>> NEW_DAY_SALES(String store_id);
+    //销售概况
+    Observable<BaseBean<Object>> NEW_SALES_INFO(String start,String end,String breakfast_start,String breakfast_end,String lunch_start,String lunch_end,String dinner_start,String dinner_end);
+    //提交日结
+    Observable<BaseBean<Object>> NEW_UPDATE_DAY_SALES(String total_amount, String total_orders, String pay_amount, String reduced_amount, String cash_list);
 }

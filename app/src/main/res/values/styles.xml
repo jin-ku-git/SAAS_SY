@@ -112,4 +112,24 @@
         <item name="android:textColor">@color/font_black</item>
         <item name="android:textSize">14sp</item>
     </style>
+
+    <!--分享popupwindow的弹出和收回动画-->
+    <style name="dialogWindowAnim" parent="android:Animation" mce_bogus="1">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/dialog_exit_anim</item>
+    </style>
+
+    <declare-styleable name="MyCalendar">
+        <attr name="dateformat" format="string"></attr>
+        <attr name="titleSize" format="dimension"></attr>
+        <attr name="titleColor" format="color"></attr>
+        <attr name="goIcon" format="reference"></attr>
+        <attr name="preIcon" format="reference"></attr>
+        <attr name="dayInMonthColor" format="color"></attr>
+        <attr name="dayOutMonthcolor" format="color"></attr>
+        <attr name="todayColor" format="color"></attr>
+        <attr name="todayEmptycircleColor" format="color"></attr>
+        <attr name="todayFillcircleColor" format="color"></attr>
+        <attr name="calendarbackground" format="color|reference"></attr>
+    </declare-styleable>
 </resources>
