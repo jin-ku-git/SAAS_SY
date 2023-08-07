@@ -44,7 +44,7 @@ public class RetrofitClient {
     private static final int DEFAULT_TIMEOUT = 60;
     //缓存时间
     private static final int CACHE_TIMEOUT = 20 * 1024 * 1024;
-    //服务端根路径
+    //服务端根路径0
 
 
     public static String baseUrl = "https://saas-test-api.youwuu.com/app/";//saas测试 20022-12-16
